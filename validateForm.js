@@ -4,6 +4,7 @@ function validate() {
 	var lastname = document.getElementById("lastname");
 	var firstname = document.getElementById("firstname");
 	var phone = document.getElementById("phone");
+	var email = document.getElementById("email");
 	var pwd = document.getElementById("password");
 	var pwd_repeat = document.getElementById("password-repeat");
 
@@ -16,7 +17,7 @@ function validate() {
 			else {
 				alert("Tên đăng nhập phải có ít nhất 6 ký tự");
 			}
-			document.getElementById("username").focus();
+			uname.focus();
 			return false;
 		}
 	}
@@ -25,7 +26,7 @@ function validate() {
 	if (fullname != null) {
 		if (fullname.value == "") {
 			alert("Vui lòng nhập họ tên.")
-			document.getElementById("fullname").focus();
+			fullname.focus();
 			return false;
 		}
 	}
@@ -34,7 +35,7 @@ function validate() {
 	if (lastname != null) {
 		if (lastname == null) {
 			alert("Vui lòng nhập Họ!");
-			document.getElementById("lastname").focus();
+			lastname.focus();
 			return false;
 		}
 	}
@@ -43,7 +44,7 @@ function validate() {
 	if (firstname != null) {
 		if (firstname.value == "") {
 			alert("Vui lòng nhập tên!");
-			document.getElementById("firstname").focus();
+			firstname.focus();
 			return false;
 		}
 
@@ -53,7 +54,7 @@ function validate() {
 	if (pwd != null){
 		if (pwd.value == "") {
 			alert("Vui lòng nhập mật khẩu!");
-			document.getElementById("password").focus();
+			pwd.focus();
 			return false;
 		}
 	}
@@ -67,28 +68,43 @@ function validate() {
 			else {
 				alert("Mật khẩu không khớp. Hãy thử lại.");
 			}
-			document.getElementById("password-repeat").focus();
+			pwd_repeat.focus();
 			return false;
 		}
 	}
 	
 	//check phone
-	if (phone.value == "") {
-		alert("Vui lòng nhập số điện thoại!");
-		document.getElementById("phone").focus();
-		return false;
-	}
-	else {
+	if (phone != null) {
 		var checkPhone = isNaN(phone.value);
-		if (checkPhone == true) {
-			alert("Điện thoại phải để ở định dạng số");
-			document.getElementById("phone").focus();
+		if (phone.value == "" || checkPhone == true) {
+			if (phone.value == "") {
+				alert("Vui lòng nhập số điện thoại!");
+			}
+			else {
+				alert("Điện thoại phải để ở định dạng số");
+			}
+			phone.focus();
 			return false;
 		}
 	}
 
-
-
+	//check email
+	if (email != null) {
+		var emailID = email.value;
+		atpos = emailID.indexOf("@");
+		dotpos = emailID.lastIndexOf(".");
+		if (emailID == "") {
+			alert ("Vui lòng nhập email.");
+			email.focus();
+			return false;
+		}
+		if (atpos < 1 || (dotpos - atpos < 2) || (dotpos + 2 > emailID.length)) {
+            alert("Email không chính xác.")
+            email.focus() ;
+            return false;
+         }
+	}
+	
 	alert("All are correct!");
 
 	return true;
