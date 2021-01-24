@@ -1,33 +1,41 @@
 <html>
 
 <head>
-	<title>Example form</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<!-- Nhúng file CSS -->
-	<link rel="stylesheet" href="style.css" />
+    <title>Example form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- link CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-	<!-- Nhúng file JavaScript -->
+    <!-- Nhúng js -->
     <script language="javascript" src="validateForm.js"></script>
-    
-	<form action="" method="POST" onsubmit="return validate()">
-		<div class="register">
-			<h1>Đăng ký nhận tin</h1>
-			
-			<p>Vui lòng điền thông tin để đăng ký</p>
+    <div class="text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nostrum ipsa dolore dolor, quaerat tempora commodi numquam porro, velit ipsum eaque aliquid quibusdam. Accusamus laudantium similique repudiandae molestiae odio porro!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde praesentium placeat, expedita ipsum facere dolor tempora magni doloribus voluptatem labore mollitia, nemo quos cum reprehenderit? Vitae dolorum adipisci impedit minima?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae dicta consequuntur eligendi aspernatur libero odio tempore, nostrum sint, quam doloribus nisi nesciunt dolorem eos odit rerum atque magni laboriosam pariatur.
+    </div>
+    <form action="" method="POST" onsubmit="return validate()">
+        <div class="register">
+            <h1>Đăng ký</h1>
 
-			<label for="fullname"><b>Họ và tên</b></label>
-			<input type="text" placeholder="Họ và tên" name="fullname" id="fullname">
-			
-			<label for="phone"><b>Điện thoại</b></label>
-			<input type="text" placeholder="Điện thoại" name="phone" id="phone">
-			
-			<hr>
-		
-			<button type="submit" class="submit">Đăng ký</button>
-		</div>
-	</form>
+            <p>Vui lòng điền thông tin để nhận tin mới nhất về môn học <a href="#">Web thế hệ mới</a></p>
+
+            <label for="fullname"><b>Họ và tên</b></label>
+            <input type="text" placeholder="Họ và tên (bắt buộc)" name="fullname" id="fullname">
+
+            <label for="phone"><b>Điện thoại</b></label>
+            <input type="text" placeholder="Điện thoại (bắt buộc)" name="phone" id="phone">
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Email (bắt buộc)" name="email" id="email">
+
+
+            <hr>
+
+            <button type="submit" class="submit">Đăng ký</button>
+        </div>
+    </form>
 </body>
 
 </html>
